@@ -1,0 +1,10 @@
+arketype.boatbehind.online {
+    root * /var/www/arketype/current
+    encode zstd gzip
+    file_server
+
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+    }
+}
