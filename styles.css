@@ -86,14 +86,14 @@ a { color: inherit; text-decoration: none; }
 
 .geometry-vertical {
   top: 318px;
-  left: 270px;
+  left: 255px;
   width: var(--line);
   height: calc(100% - 318px);
 }
 
 .geometry-horizontal {
   top: 318px;
-  left: 270px;
+  left: 255px;
   width: min(42vw, 510px);
   height: var(--line);
 }
