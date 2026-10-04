@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+.site-header {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo {
+  font-weight: 500;
+}
+
+.radio-label {
+  opacity: 0.35;
+}
+
+#visual {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#enter {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 24px 24px;
+  border: 0;
+  background: transparent;
+  color: #000;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  font: inherit;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  z-index: 3;
+  transition: opacity 1.5s ease;
+}
+
+#edition {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 2s ease;
+  pointer-events: none;
+}
+
+body.running #enter {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.running #edition {
+  opacity: 0.28;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    top: 18px;
+    left: 18px;
+    right: 18px;
+  }
+
+  #enter {
+    padding-left: 18px;
+    padding-bottom: 18px;
+  }
+
+  #edition {
+    right: 18px;
+    bottom: 18px;
+  }
+}
