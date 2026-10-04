@@ -1,24 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <title>ARKETYPE RADIO</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="ARKETYPE RADIO — an endless generative browser composition.">
+  <title>Arketype — Radio</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/radio/style.css">
 </head>
 <body>
-  <header class="site-header" aria-label="Arketype Radio">
-    <div class="logo">ARKETYPE</div>
-    <div class="radio-label">RADIO</div>
+  <header class="site-header">
+    <a class="wordmark" href="/">ARKETYPE</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/editions/">editions</a>
+      <a href="/texts/">texts</a>
+      <a href="/atelier/">atelier</a>
+      <a href="/radio/" aria-current="page">radio</a>
+      <a href="/about/">about</a>
+      <a href="/shop/">shop</a>
+      <a href="/contact/">contact</a>
+    </nav>
   </header>
 
-  <canvas id="visual" aria-hidden="true"></canvas>
+  <main class="page radio-page">
+    <section class="radio-stage" id="radio-stage">
+      <canvas id="visual" aria-hidden="true"></canvas>
 
-  <button id="enter" type="button">click anywhere</button>
+      <div class="radio-copy">
+        <h1 class="page-title">radio</h1>
+        <p class="page-note">An endless generative composition made in the browser. No recording, no fixed duration. Each visit unfolds differently.</p>
+      </div>
 
-  <div id="edition" aria-live="polite">ARKETYPE RADIO / 00000</div>
+      <img class="radio-photo" src="data:image/jpeg;base64,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" alt="Experimental sound setup with loudspeaker, mannequin head and piano">
 
-  <script src="radio.js"></script>
+      <button id="enter" type="button">start sound</button>
+      <div id="edition" aria-live="polite">ARKETYPE RADIO / 00000</div>
+    </section>
+  </main>
+
+  <script src="/radio/radio.js"></script>
 </body>
 </html>
